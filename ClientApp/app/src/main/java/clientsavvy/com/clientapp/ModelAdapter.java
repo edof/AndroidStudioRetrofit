@@ -58,6 +58,8 @@ public class ModelAdapter extends ArrayAdapter<Model>{
 
         final Model model=modelList.get(position);
         TextView tv= (TextView) view.findViewById(R.id.textview1);
+        TextView tv2= (TextView) view.findViewById(R.id.textview2);
+        tv2.setText(model.getStatus());
         tv.setText(model.getName());
 
         //Display image in imageview
@@ -78,7 +80,7 @@ public class ModelAdapter extends ArrayAdapter<Model>{
                    imageView.setImageBitmap(arg0);
                     imageCache.put(model.getId(),arg0);
                 }
-            } , 80, 80, Bitmap.Config.ARGB_8888,
+            } , 200, 200, Bitmap.Config.ARGB_8888,
                     new com.android.volley.Response.ErrorListener() {
                         @Override
                         public void onErrorResponse(VolleyError volleyError) {
